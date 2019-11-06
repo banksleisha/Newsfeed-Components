@@ -113,19 +113,46 @@ const data = [
 
 */
 
-const articles = document.querySelector('.article');
 
-data.forEach(data => {
-  console.log('creating panel:', data.title)
-  articles.appendChild(createCard(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
-})
+ //WHY DON'T YOU WORK?!
 
-function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph){
+function articleCard (articleData) {
+  const article = document.createElement("div");
+  const title = document.createElement("h2");
+  const date = document.createElement("p");
+  const paragraph1 = document.createElement("p");
+  const paragraph2 = document.createElement("p");
+  const paragraph3 = document.createElement("p");
+  const expandButton = document.createElement("span");
 
-  const article = document.createElement(".header");
-  const articleTitle = document.createElement('h2');
-  const articleDate = document.createElement();
-  const articleP1 = document.createElement();
-  const articleP2 = document.createElement();
-  const articleP3 = document.createElement();
+  article.classList.add("article");
+  date.classList.add("date");
+  expandButton.classList.add("expandButton");
+
+  article.appendChild(title);
+  article.appendChild(date);
+  areticle.appendChild(paragraph1);
+  article.appendChild(paragraph2);
+  article.appendChild(paragraph3);
+  article.appendChild(expandButton);
+
+  title.textContent = articleData.title;
+  date.textContent = articleData.date;
+  paragraph1.textContent = articleData.secondParagraph;
+  paragraph2.textContent = articleData.thirdParagraph;
+  expandButton.textContent - "view";
+
+  return article;
 }
+
+let articles = data.map(article => {
+  return articleCard(article);
+});
+
+const articleDivs = document.querySelector(".articles");
+
+articleDivs.appendChild(articles[0]);
+articleDivs.appendChild(articles[1]);
+articleDivs.appendChild(articles[2]);
+articleDivs.appendChild(articles[3]);
+
