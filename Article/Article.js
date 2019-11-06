@@ -112,3 +112,20 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const articles = document.querySelector('.article');
+
+data.forEach(data => {
+  console.log('creating panel:', data.title)
+  articles.appendChild(createCard(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
+function createArticles(title, date, firstParagraph, secondParagraph, thirdParagraph){
+
+  const article = document.createElement(".header");
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement();
+  const articleP1 = document.createElement();
+  const articleP2 = document.createElement();
+  const articleP3 = document.createElement();
+}
