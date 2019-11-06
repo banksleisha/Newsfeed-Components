@@ -39,12 +39,14 @@ function createMenu(menuItems) {
 
   const menuList = document.createElement("ul");
 
+  console.log(menuList);
+
    const menuHidden = document.querySelector(".menu-button")
 
   menuItems.forEach(item => {
     let menuItems = document.createElement("li");
     menuItems.textContent = item;
-    menuList.appendChild(menuItem);
+    menuList.appendChild(menuItems);
   });
 
   newMenu.classList.add("menu");

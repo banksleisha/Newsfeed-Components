@@ -131,7 +131,7 @@ function articleCard (articleData) {
 
   article.appendChild(title);
   article.appendChild(date);
-  areticle.appendChild(paragraph1);
+  article.appendChild(paragraph1);
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
   article.appendChild(expandButton);
@@ -140,7 +140,7 @@ function articleCard (articleData) {
   date.textContent = articleData.date;
   paragraph1.textContent = articleData.secondParagraph;
   paragraph2.textContent = articleData.thirdParagraph;
-  expandButton.textContent - "view";
+  expandButton.textContent = "view";
 
   return article;
 }
