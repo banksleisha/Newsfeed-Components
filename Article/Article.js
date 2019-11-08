@@ -169,7 +169,7 @@ function articleCard (articleData) {
   date.textContent = articleData.date;
   paragraph1.textContent = articleData.secondParagraph;
   paragraph2.textContent = articleData.thirdParagraph;
-  expandButton.textContent = "view";
+  expandButton.textContent = "Read More";
 
   return article;
 }
