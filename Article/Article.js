@@ -129,61 +129,55 @@ const data = [
 */
 
 
- class Article {
-   constructor (domElement) {
-     this.domElement = domElement;
-     this.expandButton = this.domElement.querySelector('.article .expandButton');
+ const headerClass = document.querySelector('.articles');
 
-     this.expandButton.textContent = 'Click to Expand';
+ data.forEach(data => {
+   headerClass.appendChild(createHead(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+ })
 
-     this.expandButton.addEventListener('click', () =>
-     this.expandArticle());
-   }
 
-   expandArticle(){
-     this.domElement.classList.toggle('article-open');
-   }
- }
 
-function articleCard (articleData) {
+function createHead (title, date, firstParagraph, secondParagraph, thirdParagraph) {
   const article = document.createElement("div");
-  const title = document.createElement("h2");
-  const date = document.createElement("p");
+  const title1 = document.createElement("h2");
+  const date1 = document.createElement("p");
   const paragraph1 = document.createElement("p");
   const paragraph2 = document.createElement("p");
   const paragraph3 = document.createElement("p");
   const expandButton = document.createElement("span");
 
   article.classList.add("article");
-  date.classList.add("date");
+  title1.classList.add("h2");
+  date1.classList.add("date");
+  paragraph1.classList.add("p");
+  paragraph2.classList.add("p");
+  paragraph3.classList.add("p");
   expandButton.classList.add("expandButton");
 
-  article.appendChild(title);
-  article.appendChild(date);
+  article.appendChild(title1);
+  article.appendChild(date1);
   article.appendChild(paragraph1);
   article.appendChild(paragraph2);
   article.appendChild(paragraph3);
   article.appendChild(expandButton);
 
-  title.textContent = articleData.title;
-  date.textContent = articleData.date;
-  paragraph1.textContent = articleData.secondParagraph;
-  paragraph2.textContent = articleData.thirdParagraph;
+  title1.textContent = title;
+  date1.textContent = date;
+  paragraph1.textContent = firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
   expandButton.textContent = "Read More";
+
+  expandButton.addEventListener('click', e => {
+    article.classList.toggle('article-open');
+  })
 
   return article;
 }
 
-let articles = data.map(article => {
-  return articleCard(article);
-});
 
-const articleDivs = document.querySelector(".articles");
 
-articleDivs.appendChild(articles[0]);
-articleDivs.appendChild(articles[1]);
-articleDivs.appendChild(articles[2]);
-articleDivs.appendChild(articles[3]);
+
 
 
 
