@@ -48,7 +48,7 @@ function menuCreator(arr) {
 
   let menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', () => {
-  navigation.classList.toggle('menu-open');
+  navigation.classList.toggle('menu--open');
 
 })
   navigation.appendChild(navItems);
@@ -62,8 +62,6 @@ document.querySelector('.header').appendChild(menuCreator(menuItems));
 document.addEventListener('click', e => {
   console.log(e.target)
   if (e.target !== document.querySelector('.menu-button') && menu.classList.contains('menu--open')) {
-    menu.classList.remove('menu--open');
-    TweenMax.fromTo((menu), .7, {css:{opacity: "1", display: "block", x: 0}}, {css:{opacity: "0", display: "none", x: -350}});
   }
 })
 

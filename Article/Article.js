@@ -87,6 +87,19 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 
+  // {
+  //   title: 'Developing',
+  //   date: 'October 8th, 2019',
+  //   firstParagraph: `How do I even get this to work. How do I even get this to work.How do I even get this to work.How do I even get this to work.
+  //   How do I even get this to work. How do I even get this to work.How do I even get this to work. How do I even get this to work. How do I even get this to work.`,
+
+  //   secondParagraph: `Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph.
+  //   Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph. Change the paragraph.`,
+
+  //   thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+  //         Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+  //         Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  // }
   
 ];
 
@@ -121,7 +134,7 @@ const data = [
      this.domElement = domElement;
      this.expandButton = this.domElement.querySelector('.article .expandButton');
 
-     this.expandButton.textContent = 'Expand';
+     this.expandButton.textContent = 'Click to Expand';
 
      this.expandButton.addEventListener('click', () =>
      this.expandArticle());
@@ -171,6 +184,7 @@ articleDivs.appendChild(articles[0]);
 articleDivs.appendChild(articles[1]);
 articleDivs.appendChild(articles[2]);
 articleDivs.appendChild(articles[3]);
+
 
 
 
