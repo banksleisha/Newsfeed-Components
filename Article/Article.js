@@ -114,7 +114,21 @@ const data = [
 */
 
 
- //WHY DON'T YOU WORK?!
+ class Article {
+   constructor (domElement) {
+     this.domElement = domElement;
+     this.expandButton = this.domElement.querySelector('.article .expandButton');
+
+     this.expandButton.textContent = 'Expand';
+
+     this.expandButton.addEventListener('click', () =>
+     this.expandArticle());
+   }
+
+   expandArticle(){
+     this.domElement.classList.toggle('article-open');
+   }
+ }
 
 function articleCard (articleData) {
   const article = document.createElement("div");
@@ -156,3 +170,7 @@ articleDivs.appendChild(articles[1]);
 articleDivs.appendChild(articles[2]);
 articleDivs.appendChild(articles[3]);
 
+
+
+const articles = document.querySelectorAll('.articles .article')
+articles.forEach(x => new Article(x));
