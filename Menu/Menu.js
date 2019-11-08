@@ -41,14 +41,14 @@ function menuCreator(arr) {
   navigation.classList.add('menu');
 
   arr.forEach(link => {
-    let menuItem = document.createElement('li');
-    menuItem.textContent = link;
-    navItems.appendChild(menuItem);
+    let menuItems = document.createElement('li');
+    menuItems.textContent = link;
+    navItems.appendChild(menuItems);
   });
 
   let menuButton = document.querySelector('.menu-button');
   menuButton.addEventListener('click', () => {
-  navigation.classList.toggle('menu--open');
+  navigation.classList.toggle('menu-open');
 
 })
   navigation.appendChild(navItems);
@@ -58,4 +58,12 @@ function menuCreator(arr) {
 
 document.querySelector('.header').appendChild(menuCreator(menuItems));
 
+
+document.addEventListener('click', e => {
+  console.log(e.target)
+  if (e.target !== document.querySelector('.menu-button') && menu.classList.contains('menu--open')) {
+    menu.classList.remove('menu--open');
+    TweenMax.fromTo((menu), .7, {css:{opacity: "1", display: "block", x: 0}}, {css:{opacity: "0", display: "none", x: -350}});
+  }
+})
 
